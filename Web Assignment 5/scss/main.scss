@@ -1,0 +1,253 @@
+@import './variables';
+@import './placeholders';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+}
+// adding mixins for media and about us section
+@mixin btn($bg-color){
+
+  background-color: $bg-color;
+  margin: 15px;
+}
+body {
+  background-color: #f8f8f8; // Default background color
+  color: #333; // Default text color
+}
+@function buttonStyles($bg-color, $margin: 15px) {
+  @return (
+    background-color: $bg-color,
+    margin: $margin
+  );
+}
+.btn-primary {
+  @include buttonStyles($primary-color);
+}
+
+.btn-secondary {
+  @include buttonStyles($secondary-color);
+}
+.nav {
+  height: 80px;
+  background: $primary-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--nav-padding);
+
+  .logo {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0 2rem;
+  }
+
+  .nav_items {
+    li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--secondary-color);
+      padding: 0 1.5rem;
+
+      &:hover {
+        color: var(--link-hover-color);
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+  // customer section
+  .customersSection {
+    text-align: center;
+    background: $primary-color;
+    }
+  
+  .container {
+    background: $primary-color;
+    width: 80%;
+    margin: auto;
+    background-color: gray; /* Add background color */
+    padding: 20px; /* Add padding for space around content */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for a subtle effect */
+  }
+  
+  .customer-container {
+    display: grid; // grid layout
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .customer-image {
+    max-width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+.hero {
+  
+  background: $primary-color;
+
+  .hero-container {
+    display: grid;  // grid layout for text box and the image
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem; // Add gap between columns
+    height: 95vh;
+    padding: 3rem calc((100vw - var(--container-width)) / 2);
+
+    .column-left {
+      display: flex; // flex box
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      color: var(--secondary-color);
+      padding: 0rem 2rem;
+
+      h1 {
+        margin-bottom: 1rem;
+        font-size: 3rem;
+      }
+
+      p {
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.5;
+      }
+    }
+
+    .column-right {
+      //display: grid; // Change to grid
+      display: flex; // flex box
+      grid-template-rows: auto 1fr; // Define rows for child elements
+      gap: 1rem; // Add gap between rows
+      padding: 0rem 2rem;
+
+      .hero-image {
+        width: 90%;
+        height: 90%;
+        object-fit: cover; // Maintain aspect ratio
+      }
+    }
+  }
+}
+
+button {
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  border: none;
+  color: var(--link-color);
+  background: var(--secondary-color);
+  cursor: pointer;
+  border-radius: 50px;
+
+  &:hover {
+    background: var(--link-hover-color);
+    color: var(--secondary-color);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+table {
+  width: 400px;
+
+  th {
+    text-align: center;
+  }
+
+  th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+}
+
+.dropdown {
+  width: 200px;
+  margin: 20px;
+  right: 50px;
+
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &::-webkit-select-placeholder {
+      color: #999;
+    }
+  }
+}
+
+// .footer {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   z-index: 10;
+//   width: 100%;
+//   text-align: center;
+//   padding: 30px 0;
+// }
+
+.MediaPage2 {
+  text-align: center;
+  margin: 20px auto; // Center the section
+  max-width: 80%;
+}
+
+.detailsCS {
+  background-color: #8c9600;
+  display: flex;
+  margin: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+
+  summary {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+}
+
+.audiovideoCS {
+  //background-color: #8c9600;
+  @include btn(rgb(130, 130, 193)); // mixin
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  audio, video {
+    width: 100%;
+    margin-top: 15px;
+  }
+}
+.footer{
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+
+}

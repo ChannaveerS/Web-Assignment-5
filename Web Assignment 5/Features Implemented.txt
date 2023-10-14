@@ -1,0 +1,29 @@
+Features Implemented:
+Variables:
+
+Variables are used for defining and storing values that are reused throughout the stylesheet.
+Example: $primary-color, $secondary-color, $font-family.
+Custom Properties:
+
+Custom properties (CSS variables) are used to store and reuse values.
+Example: --font-family.
+Nesting:
+
+Nesting is used to represent the hierarchy of HTML elements in a more readable way.
+Example: Nesting within .nav, .nav_items, .customersSection, .container, .hero, etc.
+Interpolation:
+
+Interpolation is used for dynamic property values or selectors.
+Example: @import './variables';, @import './placeholders';.
+Placeholder Selectors:
+
+Placeholder selectors are used for reusable styles that are not meant to be directly applied to elements.
+Example: @function buttonStyles, .btn-primary, .btn-secondary.
+Mixins:
+
+Mixins are used for reusable blocks of styles that can be included in different selectors.
+Example: @mixin btn, @include btn(rgb(130, 130, 193));.
+Functions:
+
+Functions are used for defining reusable pieces of style.
+Example: @function buttonStyles, @include buttonStyles($primary-color);.

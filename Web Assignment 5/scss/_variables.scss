@@ -1,0 +1,14 @@
+:root { // Custom Properties
+  // --primary-color: #f3ef04;
+  --secondary-color: #000;
+  --link-color: #93579b;
+  --link-hover-color: #fff;
+  --font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  --container-width: 1300px;
+  --nav-padding: 0rem calc((100vw - var(--container-width)) / 2);
+}
+
+$a:"align"; // for interpolation
+
+$primary-color: #f3ef04; // variables
+
